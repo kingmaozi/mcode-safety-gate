@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.safetygate.gate</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>__NODE__</string>
+		<string>__ROOT__/gate.mjs</string>
+	</array>
+
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>GATE_BIND</key>
+		<string>127.0.0.1</string>
+		<key>GATE_PORT</key>
+		<string>443</string>
+	</dict>
+
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>ThrottleInterval</key>
+	<integer>5</integer>
+
+	<key>StandardOutPath</key>
+	<string>__ROOT__/logs/gate.stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>__ROOT__/logs/gate.stderr.log</string>
+</dict>
+</plist>

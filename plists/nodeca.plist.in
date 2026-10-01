@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.safetygate.nodeca</string>
+
+	<!-- Electron 的 Node 侧不读系统钥匙串，用 NODE_EXTRA_CA_CERTS 注入本地 CA。
+	     必须在 MiniMax Code 启动之前设置，所以放在登录时的用户 LaunchAgent。 -->
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/launchctl</string>
+		<string>setenv</string>
+		<string>NODE_EXTRA_CA_CERTS</string>
+		<string>__ROOT__/certs/ca.crt</string>
+	</array>
+
+	<key>RunAtLoad</key>
+	<true/>
+	<key>LimitLoadToSessionType</key>
+	<string>Aqua</string>
+</dict>
+</plist>

@@ -1,0 +1,13 @@
+# 每台机器独立生成的证书与密钥，绝不入库
+certs/
+*.key
+*.crt
+*.csr
+*.srl
+
+# 运行时产物
+logs/
+state/
+
+# macOS
+.DS_Store
